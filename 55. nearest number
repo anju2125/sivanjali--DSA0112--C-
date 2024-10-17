@@ -1,0 +1,15 @@
+#include <iostream>
+#include <cmath>  
+using namespace std;
+
+int main() {
+    float number;
+    cout << "Enter a floating-point number: ";
+    cin >> number;
+    int floored = floor(number); 
+    int ceiled = ceil(number);   
+    cout << "Using floor: " << floored << endl;
+    cout << "Using ceil: " << ceiled << endl;
+
+    return 0;
+}
