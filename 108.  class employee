@@ -1,0 +1,36 @@
+#include <iostream>
+#include <string> 
+using namespace std;
+class Employee {
+private:
+    string name;   
+    int id;       
+
+public:
+    Employee(string empName, int empID) {
+        name = empName;
+        id = empID;
+    }
+    int getNameLength() {
+        return name.length();
+    }
+    void displayEmployeeInfo() {
+        cout << "Employee ID: " << id << endl;
+        cout << "Employee Name: " << name << endl;
+        cout << "Length of Name: " << getNameLength() << " characters" << endl;
+    }
+};
+
+int main() {
+    string name;
+    int id;
+    cout << "Enter Employee Name: ";
+    getline(cin, name); 
+
+    cout << "Enter Employee ID: ";
+    cin >> id;
+    Employee emp(name, id);
+    emp.displayEmployeeInfo();
+
+    return 0;
+}
