@@ -1,0 +1,35 @@
+#include <iostream>
+#include <cmath>
+#include <string>
+using namespace std;
+int hexToDec(char hexDigit) {
+    if (hexDigit >= '0' && hexDigit <= '9') {
+        return hexDigit - '0';  
+    } else if (hexDigit >= 'A' && hexDigit <= 'F') {
+        return hexDigit - 'A' + 10;  
+    } else if (hexDigit >= 'a' && hexDigit <= 'f') {
+        return hexDigit - 'a' + 10;  
+    }
+    return -1; 
+}
+
+int main() {
+    string hex;
+    int decimal = 0;
+    cout << "Enter a hexadecimal number: ";
+    cin >> hex;
+    int length = hex.length();
+    for (int i = 0; i < length; i++) {
+        char hexDigit = hex[length - 1 - i];  
+        int decValue = hexToDec(hexDigit);    
+
+        if (decValue == -1) {
+            cout << "Invalid hexadecimal number!" << endl;
+            return 1;
+        }
+        decimal += decValue * pow(16, i);
+    }
+    cout << "The decimal equivalent of hexadecimal " << hex << " is: " << decimal << endl;
+
+    return 0;
+}
