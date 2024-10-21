@@ -1,0 +1,20 @@
+#include <iostream>
+#include <string>
+#include <sstream>
+using namespace std;
+
+int main() {
+    string input;
+    int wordCount = 0;
+    cout << "Enter a line of text: ";
+    getline(cin, input);
+    stringstream ss(input);
+    string word;
+    while (ss >> word) {
+        wordCount++;
+    }
+    cout << "Number of words: " << wordCount << endl;
+
+    return 0;
+}
+
