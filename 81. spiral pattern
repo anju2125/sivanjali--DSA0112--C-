@@ -1,0 +1,40 @@
+#include <iostream>
+using namespace std;
+int main() {
+    int n;
+    cout << "Enter the size of the spiral pattern: ";
+    cin >> n;
+    int rowStart = 0, rowEnd = n - 1;
+    int colStart = 0, colEnd = n - 1;
+    int num = 1;  
+    int spiral[n][n];
+    while (rowStart <= rowEnd && colStart <= colEnd) {
+        for (int col = colStart; col <= colEnd; col++) {
+            spiral[rowStart][col] = num++;
+        }
+        rowStart++;  
+        for (int row = rowStart; row <= rowEnd; row++) {
+            spiral[row][colEnd] = num++;
+        }
+        colEnd--;  
+        if (rowStart <= rowEnd) {
+            for (int col = colEnd; col >= colStart; col--) {
+                spiral[rowEnd][col] = num++;
+            }
+            rowEnd--;  
+        }
+        if (colStart <= colEnd) {
+            for (int row = rowEnd; row >= rowStart; row--) {
+                spiral[row][colStart] = num++;
+            }
+            colStart++;  
+        }
+    }
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            cout << spiral[i][j] << "\t";  
+        }
+        cout << endl;
+    }
+    return 0;
+}
