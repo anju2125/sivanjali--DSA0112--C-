@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+class Printer {
+public:
+    virtual void print() {
+        cout << "Printing from a generic printer." << endl;
+    }
+    virtual ~Printer() {}
+};
+class LaserPrinter : public Printer {
+public:
+    void print() override {
+        cout << "Printing from a laser printer." << endl;
+    }
+    ~LaserPrinter() override {}
+};
+
+int main() {
+    Printer *printer = new LaserPrinter();
+    printer->print();  
+    delete printer;
+
+    return 0;
+}
