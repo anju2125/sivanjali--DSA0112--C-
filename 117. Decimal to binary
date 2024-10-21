@@ -1,0 +1,26 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    int decimal;
+    cout << "Enter a decimal number: ";
+    cin >> decimal;
+    vector<int> binary;
+    if (decimal == 0) {
+        cout << "Binary equivalent: 0" << endl;
+        return 0;
+    }
+    int temp = decimal;
+    while (temp > 0) {
+        binary.push_back(temp % 2); 
+        temp /= 2;  
+    }
+    cout << "Binary equivalent of " << decimal << ": ";
+    for (int i = binary.size() - 1; i >= 0; i--) {
+        cout << binary[i];
+    }
+    cout << endl;
+
+    return 0;
+}
