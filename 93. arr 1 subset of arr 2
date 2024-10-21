@@ -1,0 +1,61 @@
+#include <iostream>
+using namespace std;
+
+// Function to check if array1 is a subset of array2
+bool isSubset(int arr1[], int size1, int arr2[], int size2) {
+    // Loop through each element in array1
+    for (int i = 0; i < size1; i++) {
+        bool found = false;
+
+        // Check if the current element of array1 exists in array2
+        for (int j = 0; j < size2; j++) {
+            if (arr1[i] == arr2[j]) {
+                found = true;
+                break;  // Element found, break inner loop
+            }
+        }
+
+        // If any element of array1 is not found in array2, return false
+        if (!found) {
+            return false;
+        }
+    }
+
+    // If all elements of array1 are found in array2, return true
+    return true;
+}
+
+int main() {
+    int size1, size2;
+
+    // Input size of array1
+    cout << "Enter the size of array 1: ";
+    cin >> size1;
+    int arr1[size1];
+
+    // Input elements of array1
+    cout << "Enter the elements of array 1: ";
+    for (int i = 0; i < size1; i++) {
+        cin >> arr1[i];
+    }
+
+    // Input size of array2
+    cout << "Enter the size of array 2: ";
+    cin >> size2;
+    int arr2[size2];
+
+    // Input elements of array2
+    cout << "Enter the elements of array 2: ";
+    for (int i = 0; i < size2; i++) {
+        cin >> arr2[i];
+    }
+
+    // Check if array1 is a subset of array2
+    if (isSubset(arr1, size1, arr2, size2)) {
+        cout << "Array 1 is a subset of Array 2." << endl;
+    } else {
+        cout << "Array 1 is not a subset of Array 2." << endl;
+    }
+
+    return 0;
+}
