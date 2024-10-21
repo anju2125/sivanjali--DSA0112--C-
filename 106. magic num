@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+int sumOfDigits(int n) {
+    int sum = 0;
+    while (n > 0) {
+        sum += n % 10; 
+        n /= 10;      
+    }
+    return sum;
+}
+bool isMagicNumber(int num) {
+    int sum = num;
+    while (sum > 9) {
+        sum = sumOfDigits(sum); 
+    }
+    return (sum == 1);
+}
+
+int main() {
+    int number;
+    cout << "Enter a number: ";
+    cin >> number;
+    if (isMagicNumber(number)) {
+        cout << number << " is a magic number." << endl;
+    } else {
+        cout << number << " is not a magic number." << endl;
+    }
+
+    return 0;
+}
