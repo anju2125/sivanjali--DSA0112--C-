@@ -1,0 +1,50 @@
+#include <iostream>
+using namespace std;
+class Box {
+private:
+    double length;
+    double width;
+    double height;
+
+public:
+    Box() : length(0), width(0), height(0) {}
+    Box(double l, double w, double h) : length(l), width(w), height(h) {}
+    void setLength(double l) {
+        length = l;
+    }
+
+    void setWidth(double w) {
+        width = w;
+    }
+
+    void setHeight(double h) {
+        height = h;
+    }
+    double getLength() {
+        return length;
+    }
+
+    double getWidth() {
+        return width;
+    }
+
+    double getHeight() {
+        return height;
+    }
+    double volume() {
+        return length * width * height;
+    }
+};
+
+int main() {
+    Box box1;
+    box1.setLength(10.5);
+    box1.setWidth(7.8);
+    box1.setHeight(5.6);
+    cout << "Length: " << box1.getLength() << endl;
+    cout << "Width: " << box1.getWidth() << endl;
+    cout << "Height: " << box1.getHeight() << endl;
+    cout << "Volume of the box: " << box1.volume() << endl;
+
+    return 0;
+}
