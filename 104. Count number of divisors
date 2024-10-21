@@ -1,0 +1,31 @@
+#include <iostream>
+#include <cmath> 
+using namespace std;
+
+int countDivisors(int num) {
+    int count = 0;
+    for (int i = 1; i <= sqrt(num); i++) {
+        if (num % i == 0) { 
+            count++;
+            if (i != num / i) {
+                count++; 
+            }
+        }
+    }
+
+    return count; 
+}
+
+int main() {
+    int number;
+    cout << "Enter a number: ";
+    cin >> number;
+    if (number <= 0) {
+        cout << "Please enter a positive integer." << endl;
+        return 1;
+    }
+    int divisorCount = countDivisors(number);
+    cout << "The number of divisors of " << number << " is: " << divisorCount << endl;
+
+    return 0;
+}
