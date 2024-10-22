@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+class Number {
+private:
+    int value;
+
+public:
+    Number(int val) : value(val) {}
+    Number operator^(const Number& obj) {
+        return Number(value ^ obj.value);  
+    }
+    void display() const {
+        cout << "Value: " << value << endl;
+    }
+};
+
+int main() {
+    Number num1(5); 
+    Number num2(3);  
+    Number result = num1 ^ num2;
+    cout << "Result after XOR operation: ";
+    result.display();
+
+    return 0;
+}
