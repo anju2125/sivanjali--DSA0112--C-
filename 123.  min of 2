@@ -1,0 +1,13 @@
+#include <iostream>
+#include <algorithm> 
+using namespace std;
+
+int main() {
+    int num1, num2;
+    cout << "Enter two numbers: ";
+    cin >> num1 >> num2;
+    int minNum = min(num1, num2);
+    cout << "The minimum of the two numbers is: " << minNum << endl;
+
+    return 0;
+}
