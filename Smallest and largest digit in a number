@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num, digit;
+    int largest = 0, smallest = 9;
+    cout << "Enter a number: ";
+    cin >> num;
+    while (num > 0) {
+        digit = num % 10;  
+        if (digit > largest)
+            largest = digit;
+        if (digit < smallest)
+            smallest = digit;
+
+        num = num / 10;  
+    }
+    cout << "Largest digit: " << largest << endl;
+    cout << "Smallest digit: " << smallest << endl;
+
+    return 0;
+}
